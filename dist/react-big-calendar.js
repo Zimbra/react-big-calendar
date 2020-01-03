@@ -12346,7 +12346,7 @@
         var rangeStartMin = positionFromDate(rangeStart)
         var rangeEndMin = positionFromDate(rangeEnd)
         var top =
-          rangeEndMin - rangeStartMin < step && !eq(end, rangeEnd)
+          rangeEndMin > step * (numSlots - 1) && !eq(end, rangeEnd)
             ? ((rangeStartMin - step) / (step * numSlots)) * 100
             : (rangeStartMin / (step * numSlots)) * 100
         return {
